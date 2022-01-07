@@ -117,7 +117,6 @@ EOF
 	chown www:www /usr/local/smokeping/etc/smokeping_secrets.dist
 	cd /usr/local/smokeping/htdocs
 	mkdir -p data var cache ../cache
-	mv smokeping.fcgi.dist smokeping.fcgi
 	../bin/smokeping --debug || error=1
 	[[ $error ]] && echo "测试运行失败！" && exit 1
 }
