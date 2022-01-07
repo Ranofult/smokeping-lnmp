@@ -116,6 +116,7 @@ EOF
 	chmod 700 /usr/local/smokeping/etc/secrets /usr/local/smokeping/etc/smokeping_secrets.dist
 	chown www:www /usr/local/smokeping/etc/smokeping_secrets.dist
 	cd /usr/local/smokeping/htdocs
+	mv smokeping.fcgi.dist smokeping.fcgi
 	mkdir -p data var cache ../cache
 	../bin/smokeping --debug || error=1
 	[[ $error ]] && echo "测试运行失败！" && exit 1
